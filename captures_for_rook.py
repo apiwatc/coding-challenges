@@ -51,72 +51,33 @@ def numRookCaptures(board):
             if B[j] == EW[i]:
                 EW[i] = 'B'
 
-    # Vertical direction for Rook
-    # R at the beginning
-    if NS[0] == 'R':
-        for i in range(1, 8):
-            if NS[i] == 'B':
-                break
-            if NS[i] == 'p':
-                count += 1
-                break
-    # R at the last
-    elif NS[7] == 'R':
-        for i in range(0, 7):
-            if NS[i] == 'B':
-                break
-            if NS[i] == 'p':
-                count += 1
-                break
-    # R at somewhere else
-    else:
-        index = NS.index('R')
-        print(index)
-        for i in range(index, 0, -1):
-            if NS[i] == 'B':
-                break
-            if NS[i] == 'p':
-                count += 1
-                break
-        for i in range(index+1, 8):
-            if NS[i] == 'B':
-                break
-            if NS[i] == 'p':
-                count += 1
-                break
+    index = NS.index('R')
+    for i in range(index, 0, -1):
+        if NS[i] == 'B':
+            break
+        if NS[i] == 'p':
+            count += 1
+            break
+    for i in range(index+1, 8):
+        if NS[i] == 'B':
+            break
+        if NS[i] == 'p':
+            count += 1
+            break
 
-    # Horizontal direction for Rook
-    # R at the beginning
-    if EW[0] == 'R':
-        for i in range(1, 8):
-            if EW[i] == 'B':
-                break
-            if EW[i] == 'p':
-                count += 1
-                break
-    # R at the last
-    elif EW[7] == 'R':
-        for i in range(0, 7):
-            if EW[i] == 'B':
-                break
-            if EW[i] == 'p':
-                count += 1
-                break
-    # R at somewhere else
-    else:
-        index = EW.index('R')
-        for i in range(index, 0, -1):
-            if EW[i] == 'B':
-                break
-            if EW[i] == 'p':
-                count += 1
-                break
-        for i in range(index+1, 8):
-            if EW[i] == 'B':
-                break
-            if EW[i] == 'p':
-                count += 1
-                break
+    index = EW.index('R')
+    for i in range(index, 0, -1):
+        if EW[i] == 'B':
+            break
+        if EW[i] == 'p':
+            count += 1
+            break
+    for i in range(index+1, 8):
+        if EW[i] == 'B':
+            break
+        if EW[i] == 'p':
+            count += 1
+            break
 
     return count
 
