@@ -21,9 +21,8 @@ def minimumAbsDifference(arr):
     # pair each element from two equal-length lists
     dif = min(j-i for i, j in zip(arr, arr[1:]))
     for i in range(len(arr)-1):
-        for j in range(1):
-            if arr[i+1] - arr[i] == dif:
-                min_abs_dif.append([arr[i], arr[i+1]])
+        if arr[i+1] - arr[i] == dif:
+            min_abs_dif.append([arr[i], arr[i+1]])
 
     return min_abs_dif
 
