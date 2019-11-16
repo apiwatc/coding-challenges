@@ -12,9 +12,12 @@ return [0, 1].
 
 
 def twoSum(nums, target):
+    # store the result of subtractions between target and elements
     hash_table = {}
     for i, j in enumerate(nums):
+        # check if subtraction in the hash_table, return that number and its index
         if target - nums[i] in hash_table:
             return hash_table[target-nums[i]], i
+        # if not, add that number and its index to hash_table
         else:
             hash_table[nums[i]] = i
