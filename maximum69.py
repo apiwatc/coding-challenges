@@ -16,14 +16,6 @@ The maximum number is 9969.
 
 
 def maximum69Number(num):
-    # max_num = [num]
-    # arr = list(str(num))
-    # for i in range(len(arr)):
-    #     temp = arr.copy()
-    #     if arr[i] == '6':
-    #         temp[i] = '9'
-    #         max_num.append(int(''.join(temp)))
-    # return max(max_num)
     max_num = str(num)
     return int(max_num.replace('6', '9', 1))
 
