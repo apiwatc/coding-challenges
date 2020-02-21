@@ -21,18 +21,13 @@ Output:
 
 def subsets(nums):
     subs = [[]]
-
-    if len(nums) <= 0:
-        return subs
-    elif len(nums) == 1:
-        return [[], nums]
-    for num in nums:
+    for i in range(len(nums)):
         # len(subs) updates once subs appends new value
-        for i in range(len(subs)):
-            subs += [subs[i] + [num]]
+        for j in range(len(subs)):
+            subs += [subs[j] + [nums[i]]]
 
     return subs
 
 
-nums = [1]
+nums = [1, 2, 3]
 print(subsets(nums))
