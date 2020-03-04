@@ -18,8 +18,8 @@ Output: 701
 
 def titleToNumber(s):
     ans = 0
-    for i in range(len(s)):
-        ans = (ans * 26) + ord(s[i])-64
+    for c in s:
+        ans = (ans * 26) + ord(c)-64
 
     return ans
 
