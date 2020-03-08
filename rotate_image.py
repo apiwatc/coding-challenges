@@ -23,25 +23,24 @@ Example 1:
 """
 
 
-import copy
-
-
 def rotate(matrix):
     """
     Do not return anything, modify matrix in-place instead.
     """
-    tmp = copy.deepcopy(matrix)
-    idx = len(matrix)-1
+    n = len(matrix)-1
+    matrix.reverse()
     for i in range(len(matrix)):
-        for j in range(len(matrix[0])):
-            matrix[i][j] = tmp[(len(matrix)-1)-j][i]
+        for j in range(i, len(matrix[0])):
+            matrix[i][j], matrix[j][i] = matrix[j][i],  matrix[i][j]
+
+    return matrix
 
 
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
-print(matrix)
+matrix = [[5, 1, 9, 11],
+          [2, 4, 8, 10],
+          [13, 3, 6, 7],
+          [15, 14, 12, 16]]
+
+# print(matrix)
 print(rotate(matrix))
-print(matrix)
+# print(matrix)
