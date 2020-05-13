@@ -18,8 +18,8 @@ XOR
 def singleNumber(nums):
     single = 0
     for num in nums:
-        num ^= num
-    return num
+        single ^= num
+    return single
 
 
 nums = [4, 1, 2, 1, 2]
