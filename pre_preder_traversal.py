@@ -1,6 +1,5 @@
 def preorderTraversal(self, root: TreeNode) -> List[int]:
-    stack = []
-    stack.append(root)
+    stack = [root]
     ans = []
 
     while stack:
